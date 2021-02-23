@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/motionLayout9"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    app:layoutDescription="@xml/scene_step_9"
+    app:motionDebug="SHOW_ALL">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <ImageView
+        android:id="@+id/board"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/tel_keyboard"
+        app:layout_constraintBottom_toTopOf="@id/nav"
+        app:layout_constraintDimensionRatio="1.1"
+        tools:ignore="ContentDescription" />
+
+    <ImageView
+        android:id="@+id/nav"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/tel_bottom_nav"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="6.10"
+        tools:ignore="ContentDescription" />
+
+    <com.sun.motion.custom.CrossFadeImageView
+        android:id="@+id/action"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/bg_circle"
+        android:padding="10dp"
+        android:src="@drawable/ic_baseline_local_phone_24"
+        app:altSrc="@drawable/ic_baseline_dialpad_24"
+        app:layout_constraintBottom_toTopOf="@id/nav"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+</androidx.constraintlayout.motion.widget.MotionLayout>

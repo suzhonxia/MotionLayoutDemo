@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        motion:constraintSetEnd="@+id/end"
+        motion:constraintSetStart="@id/start"
+        motion:duration="450">
+
+        <KeyFrameSet>
+
+            <KeyAttribute
+                motion:framePosition="0"
+                motion:motionTarget="@id/minLayout">
+
+                <CustomAttribute
+                    motion:attributeName="alpha"
+                    motion:customFloatValue="1.0" />
+            </KeyAttribute>
+
+            <KeyAttribute
+                motion:framePosition="50"
+                motion:motionTarget="@id/minLayout">
+
+                <CustomAttribute
+                    motion:attributeName="alpha"
+                    motion:customFloatValue="0.0" />
+            </KeyAttribute>
+
+            <KeyAttribute
+                motion:framePosition="100"
+                motion:motionTarget="@id/minLayout">
+
+                <CustomAttribute
+                    motion:attributeName="alpha"
+                    motion:customFloatValue="1.0" />
+            </KeyAttribute>
+        </KeyFrameSet>
+    </Transition>
+
+    <ConstraintSet android:id="@+id/start" />
+
+    <ConstraintSet android:id="@+id/end">
+
+        <Constraint
+            android:id="@id/ivBig"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="15dp"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toBottomOf="@id/tvTitle" />
+        <Constraint
+            android:id="@id/minLayout"
+            android:layout_width="0dp"
+            android:layout_height="70dp"
+            android:layout_marginTop="15dp"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toBottomOf="@id/space" />
+        <Constraint
+            android:id="@id/cover"
+            android:layout_width="80dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="15dp"
+            android:alpha="0"
+            motion:layout_constraintBottom_toBottomOf="@id/play"
+            motion:layout_constraintEnd_toEndOf="@id/play" />
+        <Constraint
+            android:id="@id/play"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginBottom="60dp"
+            android:alpha="1"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent" />
+    </ConstraintSet>
+</MotionScene>
